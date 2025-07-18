@@ -10,9 +10,10 @@
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
+            --light-color: #b9d4db;
             --dark-color: #2c3e50;
-            --text-color: #333;
+            --text-color: #000000;
+            --text-color2: #ffffff;
             --text-light: #fff;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
@@ -58,17 +59,18 @@
         .logo-container {
             width: 200px;
             height: 80px;
-            border: 2px dashed var(--secondary-color);
+            style="border-radius: 50%
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0);
         }
 
         .logo-placeholder {
-            color: var(--secondary-color);
-            font-size: 14px;
-            text-align: center;
+            width: auto;
+            height: auto;
+            style="border-radius: 50%
+            box-shadow: #00000000;
         }
 
         /* Navigation */
@@ -106,7 +108,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('20250718_110224.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/736x/04/e1/dc/04e1dc318443c3f7b634cd580c520fba.jpg') center/cover no-repeat;
+            style="border-radius: 50%
             color: var(--text-light);
             display: flex;
             align-items: center;
@@ -117,6 +120,7 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            color: var(--text-color2);
         }
 
         .hero h1 {
@@ -529,6 +533,7 @@
                 font-size: 2rem;
             }
         }
+        
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -537,19 +542,19 @@
     <header>
         <div class="container header-container">
             <div class="logo-container">
-                <div class="logo-placeholder">Logo Space (Will be added here)</div>
+                <div class="logo-placeholder"><img src="Mylogo.png" alt="Logo"></div>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#location">Location</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home"><b>Home</b></a></li>
+                    <li><a href="#services"><b>Services</b></a></li>
+                    <li><a href="#about"><b>About Us</b></a></li>
+                    <li><a href="#pricing"><b>Pricing</b></a></li>
+                    <li><a href="#location"><b>Location</b></a></li>
+                    <li><a href="#contact"><b>Contact</b></a></li>
                 </ul>
             </nav>
         </div>
@@ -578,16 +583,16 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://placehold.co/600x400" alt="Modern computer workstations with comfortable chairs in a bright, clean internet cafe">
+                        <img src="service-img.jpg" alt="Modern computer workstations with comfortable chairs in a bright, clean internet cafe">
                     </div>
                     <div class="service-content">
-                        <h3>High-Speed Internet</h3>
-                        <p>Enjoy lightning-fast internet connectivity with our premium fiber-optic connection. Perfect for browsing, streaming, and downloads.</p>
+                        <h3>Govt. & Private Digital Services</h3>
+                        <p>From applying for Aadhar, PAN, Ration Card, and Voter ID to Ayushman Bharat, online exam form fill-up, resume creation, ticket booking.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://placehold.co/600x400" alt="Professional printing and scanning setup with color printer and documents">
+                        <img src="service-img2.png" alt="Professional printing and scanning setup with color printer and documents">
                     </div>
                     <div class="service-content">
                         <h3>Printing & Scanning</h3>
@@ -596,7 +601,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://placehold.co/600x400" alt="Cozy lounge area in cafe with comfortable seating and small tables">
+                        <img src="service-img3.png" alt="Cozy lounge area in cafe with comfortable seating and small tables">
                     </div>
                     <div class="service-content">
                         <h3>Comfortable Workspace</h3>
@@ -618,7 +623,7 @@
                     <p>Our team consists of friendly, knowledgeable staff who are always ready to assist you with any of your digital needs.</p>
                 </div>
                 <div class="about-img">
-                    <img src="https://placehold.co/600x400" alt="Interior of Sahaj Tathya Mitra Kendra showing modern workstations and happy customers">
+                    <img src="about-img.jpg" alt="Interior of Sahaj Tathya Mitra Kendra showing modern workstations and happy customers">
                 </div>
             </div>
         </div>
@@ -632,8 +637,8 @@
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Basic Plan</h3>
-                    <div class="price">₹30 <span>/hour</span></div>
+                    <h3>Basic Services</h3>
+                    <div class="price">₹0 <span>/hour</span></div>
                     <ul class="pricing-features">
                         <li>Standard internet speed</li>
                         <li>Access to workspace</li>
@@ -643,23 +648,23 @@
                     <a href="#contact" class="btn">Get Started</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Premium Plan</h3>
-                    <div class="price">₹40 <span>/hour</span></div>
+                    <h3>Advance services</h3>
+                    <div class="price">₹0 <span>/hour</span></div>
                     <ul class="pricing-features">
-                        <li>High-speed internet</li>
-                        <li>Priority printing</li>
-                        <li>Comfortable seating</li>
-                        <li>Extended support</li>
+                        <li>Aadhar</li>
+                        <li>PAN </li>
+                        <li>Ration </li>
+                        <li>Voter</li>
                     </ul>
                     <a href="#contact" class="btn">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Printing Services</h3>
-                    <div class="price">₹5-20 <span>/page</span></div>
+                    <div class="price">₹5-30 <span>/page</span></div>
                     <ul class="pricing-features">
                         <li>Black & White prints from ₹5/page</li>
-                        <li>Color prints from ₹15/page</li>
-                        <li>Photocopy services from ₹3/page</li>
+                        <li>Color prints from ₹10/page</li>
+                        <li>Photocopy services from ₹30/page</li>
                         <li>Scanning services ₹10 per document</li>
                     </ul>
                     <a href="#contact" class="btn">Get Started</a>
@@ -680,25 +685,22 @@
                     <p>We're conveniently located in the city center, easily accessible by public transportation with parking available nearby.</p>
                     <address>
                         <strong>Sahaj Tathya Mitra Kendra</strong><br>
-                        123 Cyber Lane, Digital Plaza<br>
-                        Bhubaneswar, Odisha 751001<br>
-                        Near City Bus Stand
+                        More, Ghasiara, Rajpur Sonarpur<br>
+                        South 24 Parganas, West Bengal 700150<br>
+                        Near Ghasiara More
                     </address>
                     
                     <div class="opening-hours">
                         <h3>Opening Hours</h3>
                         <table class="hours-table">
                             <tr>
-                                <td>Monday - Friday</td>
-                                <td>8:00 AM - 10:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td>9:00 AM - 10:00 PM</td>
+                                <td>Monday - Saturday</td>
+                                <td>9:00 AM - 2:00 PM</td>
+                                <td>2:00 PM - 10:00 PM</td>
                             </tr>
                             <tr>
                                 <td>Sunday</td>
-                                <td>10:00 AM - 9:00 PM</td>
+                                <td>9:00 AM - 2:00 PM</td>
                             </tr>
                         </table>
                     </div>
@@ -709,7 +711,7 @@
                 </div>
                 
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.1127531513577!2d85.81528531533123!3d20.29641908639942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2bceb97f6!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1629800000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14750.896191467264!2d88.43522561047483!3d22.439409933378982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0272897ef5d099%3A0x26a9ce5754b4afc0!2sSAHAJ%20TATHYA%20MITRA%20KENDRA!5e0!3m2!1sen!2sin!4v1752842352555!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -729,15 +731,15 @@
                     <ul>
                         <li>
                             <i class="fas fa-phone-alt"></i>
-                            <span>+91 98765 43210</span>
+                            <span>+91 79802 63195</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>info@sahajtathyamitrakendra.com</span>
+                            <span>sahajtmks@gmail.com</span>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Cyber Lane, Digital Plaza, Bhubaneswar</span>
+                            <span>More, Ghasiara, Rajpur Sonarpur</span>
                         </li>
                     </ul>
                     
@@ -775,7 +777,7 @@
     <footer>
         <div class="container">
             <div class="logo-container" style="margin: 0 auto; border-color: var(--text-light);">
-                <div class="logo-placeholder" style="color: var(--text-light);">Logo Space</div>
+                <div class="logo-placeholder" style="color: var(--text-light);"><img src="Mylogo.png" alt="Logo"></div>
             </div>
             
             <div class="social-links">
@@ -786,7 +788,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 Sahaj Tathya Mitra Kendra. All Rights Reserved.</p>
+                <p>&copy; 2024 <a href="https://imes435.github.io/imes.new/">IMES</a> . All Rights Reserved.</p>
             </div>
         </div>
     </footer>
