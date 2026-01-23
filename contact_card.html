@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://i.pinimg.com/736x/36/89/3a/36893a835ffbc57f4deec346bea22cbb.jpg" />
+    <title>Contact Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-card {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo-container {
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .logo img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        .contact-content {
+            padding: 30px;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+            font-weight: bold;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contact-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .whatsapp i {
+            background-color: #25D366;
+        }
+
+        .email i {
+            background-color: #EA4335;
+        }
+
+        .message i {
+            background-color: #4285F4;
+        }
+
+        .location i {
+            background-color: #FBBC05;
+        }
+
+        .contact-item span {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 200px;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .th{
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            .contact-title {
+                font-size: 20px;
+            }
+            .contact-item {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+    <link rel="icon" href="Mylogo2.png" type="image/png">
+</head>
+<body>
+    <div class="contact-card">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/c6/2a/d7/c62ad7fd8bf74c8539f6cb37420a35ba.jpg">
+            </div>
+        </div>
+        <div class="contact-content">
+            <h2 class="contact-title">Sahaj Tathya Mitra Kendra</h2>
+            <div class="contact-items">
+                <a href="tel:7980263195" class="contact-item whatsapp">
+                    <i class="fa-solid fa-phone"></i>
+                    <span><div class='th'>Call On</div>7980263195</span>
+                </a>
+                <a href="https://wa.me/917980263195?text=" class="contact-item whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span><div class='th'>Primary WhatsApp(1)</div>7980263195</span>
+                </a>
+                <a href="https://wa.me/#?text=" class="contact-item whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span><div class='th'>Secondary WhatsApp(2)</div></span>
+                </a>
+                <a href="mailto:sahajtmks@gmail.com?subject=Print&body= -> " class="contact-item email">
+                    <i class="fas fa-envelope"></i>
+                    <span><div class='th'>Send us an Email</div>sahajtmks@gmail.com</span>
+                </a>
+                <a href="sms:+917980263195?body=" class="contact-item message">
+                    <i class="fas fa-comment-alt"></i>
+                    <span><div class='th'>Text Message </div>7980263195</span>
+                </a>
+                <a href="https://sahajtmks.github.io/sahajtmks/" class="contact-item whatsapp">
+                    <i class="fa-solid fa-globe"></i>
+                    <span><div class='th'>WEBSITE</div>Sahaj Tathya Mitra Kendra</span>
+                </a>
+                <a href="upi://pay?pa=9051634959@ybl&pn=Susil%20Mondal&mc=0000&mode=02&purpose=00" class="contact-item whatsapp">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    <span><div class='th'>UPI Pay</div>UPI ID- 9051634959@upi</span>
+                </a>
+                <a href="https://maps.app.goo.gl/YRRDGmyLpcn4WB1e7" style="text-decoration: none; color: #333;" class="contact-item whatsapp">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span><div class='th'>Sahaj Tathya Mitra Kendra</div> More, Ghasiara, Rajpur Sonarpur, West Bengal 700150</span>
+                </a>
+                <!-- <div class="contact-item location"> -->
+                    <!-- <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://maps.app.goo.gl/YRRDGmyLpcn4WB1e7" style="text-decoration: none; color: #333;">
+                    <span><div class='th'>Sahaj Tathya Mitra Kendra</div> More, Ghasiara, Rajpur Sonarpur, West Bengal 700150</span>
+                </a> -->
+                <!-- </div> -->
+            </div>
+            <div class="map-container">
+                <img src="https://i.pinimg.com/736x/b6/ac/10/b6ac106ab272acd488373688d197d22c.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
