@@ -39,6 +39,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--light-color);
+            overflow: hidden;
         }
 
         .container {
@@ -287,11 +288,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .service-card {
+      .service-card {
             background-color: #fff;
             border-radius: 8px;
+            padding: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -304,13 +308,20 @@
         .service-img {
             height: 200px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .service-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 320px;
+            border-radius: 8px;
+            height: auto;
+            object-fit: contain;
         }
+
 
         .service-content {
             padding: 20px;
