@@ -117,6 +117,9 @@
         }
 
         /* Hero Section */
+       
+        
+
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/736x/04/e1/dc/04e1dc318443c3f7b634cd580c520fba.jpg') center/cover no-repeat;
@@ -126,6 +129,7 @@
             align-items: center;
             text-align: center;
             padding-top: 100px;
+            position: relative;
         }
 
         .hero-content {
@@ -143,6 +147,31 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
+        .tm-circle {
+  position: absolute;
+  right: 60px;          /* adjust position */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.tm-circle img {
+  width: 85%;
+  height: auto;
+  border-radius: 50%;
+}
+.tm-circle:hover {
+  transform: translateY(-50%) scale(1.05);
+  transition: 0.3s ease;
+}
+
 
         .btn {
             display: inline-block;
@@ -672,8 +701,12 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+         <div class="tm-circle">
+  <img src="tathya-mitra-logo.png" alt="Tathya Mitra Logo">
+</div>
         <div class="container">
             <div class="hero-content">
+               
                 <h1>Welcome to Sahaj Tathya Mitra Kendra</h1>
                 <p>Your premier destination for high-speed internet, printing services, and comfortable workspace in the heart of the city.</p>
                 <div class="btn-container">
