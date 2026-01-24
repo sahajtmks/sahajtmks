@@ -686,10 +686,79 @@
   transform: var(--transition);
 }
 
+#preloader {
+  position: fixed; width: 100%; height: 100%;
+  background: #000; display: flex;
+  align-items: center; justify-content: center;
+  flex-direction: column; z-index: 9999;
+}
+
+#loader { display: flex; flex-direction: column; align-items: center; }
+
+#icon-circle {
+  position: relative; width: 20vw; max-width: 120px; height: 20vw; max-height: 120px;
+  margin-bottom: 20px;
+}
+
+#icon-circle i {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw; max-font-size: 40px; color: #0ff; z-index: 2;
+}
+
+#circle-svg {
+  width: 100%; height: 100%; transform: rotate(-90deg);
+  position: absolute; top: 0; left: 0;
+}
+
+.bg-circle { fill: none; stroke: #222; stroke-width: 5; }
+.fg-circle { fill: none; stroke: #0ff; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 283; stroke-dashoffset: 283; transition: stroke-dashoffset 0.1s linear; }
+
+#bar-wrapper { display: flex; align-items: center; width: 80%; max-width: 400px; }
+
+#progress-bar {
+  flex: 1; height: 8px; background: #222; border-radius: 4px; margin-right: 10px;
+  position: relative; box-shadow: 0 0 10px #0ff; overflow: hidden;
+}
+
+#progress {
+  width: 0%; height: 100%;
+  background: linear-gradient(90deg, #0ff, #00f);
+  border-radius: 4px;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: width 0.1s linear;
+}
+
+#percentage { font-size: 1rem; min-width: 40px; text-align: right; color: #0ff; }
+
+@media (max-width: 600px) {
+  #icon-circle { width: 25vw; height: 25vw; }
+  #icon-circle i { font-size: 8vw; }
+  #bar-wrapper { width: 90%; }
+  #progress-bar { height: 10px; }
+  #percentage { font-size: 1.2rem; }
+}
         
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<div id="preloader">
+  <div id="loader">
+    <div id="icon-circle">
+      <i class="fas fa-rocket"></i>
+      <svg id="circle-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <circle class="bg-circle" cx="50" cy="50" r="45"></circle>
+        <circle id="progress-circle" class="fg-circle" cx="50" cy="50" r="45"></circle>
+      </svg>
+    </div>
+    <div id="bar-wrapper">
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div id="percentage">0%</div>
+    </div>
+  </div>
+</div>
 <body>
     <!-- Header -->
     <header>
@@ -1089,5 +1158,41 @@ form.addEventListener('submit', async (e) => {
 
         
     </script>
+
 </body>
+<script>
+let progress = 0;
+const progressBar = document.getElementById('progress');
+const percentage = document.getElementById('percentage');
+const circle = document.getElementById('progress-circle');
+
+// Dynamically calculate radius for responsiveness
+const radius = circle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = circumference;
+
+let interval = setInterval(() => {
+  progress += Math.random() * 5; 
+  if(progress > 100) progress = 100;
+
+  // Horizontal bar
+  progressBar.style.width = progress + '%';
+
+  // Circular progress
+  circle.style.strokeDashoffset = circumference * (1 - progress / 100);
+
+  // Percentage text
+  percentage.innerText = Math.floor(progress) + '%';
+
+  if(progress >= 100){
+    clearInterval(interval);
+    setTimeout(() => {
+      document.getElementById('preloader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      document.body.style.overflow = 'auto';
+    }, 500);
+  }
+}, 100);
+</script>
 </html>
