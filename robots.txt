@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sahajtmks.github.io/sahajtmks/sitemap.xml
