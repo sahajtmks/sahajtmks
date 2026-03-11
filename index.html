@@ -1133,7 +1133,7 @@ Our mission is to bridge the digital divide by making technology accessible to e
                 
                 <div class="contact-form">
 
-                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <form id="form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="f7017d0b-cba2-4367-bc41-ca633a3d2f98">
                         <input class="form-group"  type="text" name="name" placeholder="Your Name" required>
                         <input class="form-group" type="email" name="email" placeholder="Your Email" required>
@@ -1232,15 +1232,13 @@ Our mission is to bridge the digital divide by making technology accessible to e
         //     });
         
 
-        const form = document.getElementById('form');
+       const form = document.getElementById("form");
 const submitBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
     const formData = new FormData(form);
-    formData.append("access_key", "f7017d0b-cba2-4367-bc41-ca633a3d2f98");
-
     const originalText = submitBtn.textContent;
 
     submitBtn.textContent = "Sending...";
@@ -1255,18 +1253,18 @@ form.addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (response.ok) {
-            alert("Success! Your message has been sent. Thank you for your message! We will get back to you soon.");
-            form.reset();
+            alert("Message sent successfully!");
+            form.reset(); // THIS deletes name, email, message automatically
         } else {
             alert("Error: " + data.message);
         }
 
     } catch (error) {
-        alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+        alert("Something went wrong.");
     }
+
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
 });
 
 
