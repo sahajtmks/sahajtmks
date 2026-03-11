@@ -1210,6 +1210,25 @@ Our mission is to bridge the digital divide by making technology accessible to e
 });
 
 
+        window.addEventListener("load", function () {
+
+    if (window.location.hash === "#home") {
+
+        const home = document.querySelector("#home");
+
+        if (home) {
+            setTimeout(() => {
+                home.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }, 300);
+        }
+
+    }
+
+});
+
+
         
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
