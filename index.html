@@ -1192,6 +1192,27 @@ Our mission is to bridge the digital divide by making technology accessible to e
     </footer>
 
     <script>
+
+        window.addEventListener("load", function () {
+
+    if (window.location.hash === "#home") {
+
+        const home = document.querySelector("#home");
+
+        if (home) {
+            setTimeout(() => {
+                home.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }, 300);
+        }
+
+    }
+
+});
+
+
+        
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
@@ -1317,12 +1338,6 @@ let interval = setInterval(() => {
   }
 }, 100);
 
-window.addEventListener("load", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
-});
-    
+
 </script>
 </html>
