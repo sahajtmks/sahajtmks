@@ -1254,7 +1254,7 @@ form.addEventListener("submit", async function(e) {
 
         if (response.ok) {
             alert("Message sent successfully!");
-            form.reset(); // THIS deletes name, email, message automatically
+            form.reset(); window.location.hash = "#home"; // THIS deletes name, email, message automatically
         } else {
             alert("Error: " + data.message);
         }
