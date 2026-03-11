@@ -1195,18 +1195,16 @@ Our mission is to bridge the digital divide by making technology accessible to e
 
         window.addEventListener("load", function () {
 
-    if (window.location.hash === "#home") {
+    // Always start at Home when page loads or reloads
+    window.location.hash = "#home";
 
-        const home = document.querySelector("#home");
+    const home = document.getElementById("home");
 
-        if (home) {
-            setTimeout(() => {
-                home.scrollIntoView({
-                    behavior: "instant"
-                });
-            }, 300);
-        }
-
+    if (home) {
+        window.scrollTo({
+            top: home.offsetTop - 100,
+            behavior: "auto"
+        });
     }
 
 });
