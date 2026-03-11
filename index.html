@@ -943,6 +943,9 @@ border-radius:10px;
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
+<body>
+
 <div id="skeleton-loader">
 
   <!-- Header Skeleton -->
@@ -966,7 +969,7 @@ border-radius:10px;
   </div>
 
 </div>
-<body>
+    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1413,33 +1416,20 @@ window.addEventListener("load", function(){
 });
 
 // Dynamically calculate radius for responsiveness
-const radius = circle.r.baseVal.value;
-const circumference = 2 * Math.PI * radius;
-circle.style.strokeDasharray = circumference;
-circle.style.strokeDashoffset = circumference;
+window.addEventListener("load", function(){
 
-let interval = setInterval(() => {
-  progress += Math.random() * 5; 
-  if(progress > 100) progress = 100;
+  const skeleton = document.getElementById("skeleton-loader");
 
-  // Horizontal bar
-  progressBar.style.width = progress + '%';
+  setTimeout(function(){
+    skeleton.style.opacity = "0";
+    
+    setTimeout(function(){
+      skeleton.style.display = "none";
+    },500);
 
-  // Circular progress
-  circle.style.strokeDashoffset = circumference * (1 - progress / 100);
+  },1200);
 
-  // Percentage text
-  percentage.innerText = Math.floor(progress) + '%';
-
-  if(progress >= 100){
-    clearInterval(interval);
-    setTimeout(() => {
-      document.getElementById('preloader').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 500);
-  }
-}, 100);
+});
 
     const radius = circle.r.baseVal.value;
 
