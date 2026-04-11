@@ -1466,22 +1466,7 @@ form.addEventListener("submit", async function(e) {
 });
 
 
-        // Sticky Header
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                document.querySelector('header').style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-            }
-        });
-
-        const menuToggle = document.getElementById("menuToggle");
-const menuItems = document.getElementById("menuItems");
-
-menuToggle.addEventListener("click", () => {
-    menuItems.classList.toggle("active");
-});
-
+       
         
     </script>
    <!-- Floating Menu Button -->
@@ -1531,6 +1516,22 @@ window.addEventListener("load", function(){
   },784); // page load wait time
 
 });
+     // Sticky Header
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                document.querySelector('header').style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        const menuToggle = document.getElementById("menuToggle");
+const menuItems = document.getElementById("menuItems");
+
+menuToggle.addEventListener("click", () => {
+    menuItems.classList.toggle("active");
+});
+
    
 </script>
     
