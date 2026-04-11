@@ -1008,6 +1008,7 @@
 .menu-btn.call { background: #007bff; }
 .menu-btn.whatsapp { background: #25D366; }
 .menu-btn.booking { background: #e74c3c; }
+.menu-btn.contact { background: #6f42c1; }
 
 .menu-btn:hover {
     transform: scale(1.1);
@@ -1030,9 +1031,23 @@
     font-weight: 900;
 }
 
-        /* Quick Contact Color */
-.menu-btn.contact {
-    background: #6f42c1;
+
+        .menu-btn::after {
+    content: attr(title);
+    position: absolute;
+    right: 55px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.menu-btn:hover::after {
+    opacity: 1;
 }
         
     </style>
